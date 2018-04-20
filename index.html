@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LinkWhats - Facilitador de links para WhatsApp!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js.js"></script>
+</head>
+
+<body>
+    <section class="hero is-primary is-fullheight bg-whats">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item">
+            <img src="https://www.nork.digital/wp-content/uploads/2017/10/Logo-site-branco-300x87.png" alt="Logo">
+          </a>
+
+                    </div>
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <span class="navbar-item">
+              <a href="https://www.nork.digital" class="button is-primary is-inverted">
+                <span class="icon">
+                  <i class="fa fa-home"></i>
+                </span>
+                            <span>Conheça a Nork Digital</span>
+                            </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="hero-body is-medium">
+            <div class="container has-text-centered bg-form">
+                <h1 class="title">
+                    LINKWHATS
+                </h1>
+                <h2 class="subtitle">
+                    Facilitador de links para WhatsApp!
+                </h2>
+                <div class="column">
+                    <form action="PayslipServlet" method="get">
+
+                        <div class=""><input class="input-c" size="45" type="text" name="tel" id="tel" placeholder="Phone ex: 19993213148"></div>
+                </div>
+                <div class="col">
+                    <div class=""><input class="input-c" size="45" type="text" name="msg" id="msg" placeholder="Msg ex: Olá, gostaria de informações"></div>
+                </div>
+                <div class="col">
+                    <input class="button is-primary is-inverted pdt-1" type="button" id="first-button" value="Gerar" onClick="go()">
+                </div>
+
+                </form>
+                </br>
+                <span class="result" id="result"></span>
+            </div>
+        </div>
+        </div>
+
+
+        <div class="hero-foot">
+            <nav class="tabs">
+                <div class="container">
+                    <ul>
+                        <li class="is-active"><!--<a>Criado por Caio Peres</a>--></li>
+                        <li><a href="https://www.nork.digital">Powered by Nork Digital</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+</body>
+
+</html>
