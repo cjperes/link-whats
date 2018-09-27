@@ -52,10 +52,10 @@
                 <div class="column">
                     <form action="PayslipServlet" method="get">
 
-                        <div class=""><input class="input-c" size="45" type="text" name="tel" id="tel" placeholder="Phone ex: 19993213148"></div>
+                        <div class=""><input class="input-c" size="45"  name="tel" id="tel" placeholder="Telefone/Celular" onkeypress='return SomenteNumero(event)'></div>
                 </div>
                 <div class="col">
-                    <div class=""><input class="input-c" size="45" type="text" name="msg" id="msg" placeholder="Msg ex: Olá, gostaria de informações"></div>
+                    <div class=""><input class="input-c" size="45" type="text" name="msg" id="msg" placeholder="Mensagem padrão" onkeypress='return ReplaceEspaco()'></div>
                 </div>
                 <div class="col">
                     <input class="button is-primary is-inverted pdt-1" type="button" id="first-button" value="Gerar" onClick="go()">
