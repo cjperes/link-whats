@@ -4,12 +4,46 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LinkWhats - Facilitador de links para WhatsApp!</title>
+    <meta http-equiv="Content-Language" content="pt-br">
+    <title>LinkWhats - Gerador de link para WhatsApp!</title>
+<meta name="description" content="Gerar links para o WhatsApp, utilizando a API. Os seus contatos estão a um clique de distancia!"/>
+<meta name="author" content="Caio Peres"/>
+<meta name="robots" content="index/follow"/>
+<meta name="googlebot" content="index/follow"/>
+<meta name="theme-color" content="#00ff00"/>
+<meta name="msapplication-navbutton-color" content="#00ff00"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="#00ff00"/>
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="LinkWhats - Gerador de link para WhatsApp!"/>
+<meta itemprop="description" content="Gerar links para o WhatsApp, utilizando a API. Os seus contatos estão a um clique de distancia!"/>
+<meta itemprop="image" content="https://www.nork.digital/wp-content/uploads/2017/10/Logo-site-branco-300x87.png"/>
+<!-- markup for facebook -->
+<meta property="og:type" content=""/>
+<meta property="og:title" content="LinkWhats - Gerador de link para WhatsApp!"/>
+<meta property="og:url" content="http://nork.digital/labs/linkwhats/"/>
+<meta property="og:site_name" content=""/>
+<meta property="og:image" content="https://www.nork.digital/wp-content/uploads/2017/10/Logo-site-branco-300x87.png"/>
+<meta property="og:description" content="Gerar links para o WhatsApp, utilizando a API. Os seus contatos estão a um clique de distancia!"/>
+<meta property="og:locale" content=""/>
+<meta property="fb:app_id" content=""/>
+<meta property="fb:admins" content=""/>
+<!-- markup for twitter -->
+<meta name="twitter:card" content=""/>
+<meta name="twitter:title" content="LinkWhats - Gerador de link para WhatsApp!"/>
+<meta name="twitter:description" content="Gerar links para o WhatsApp, utilizando a API. Os seus contatos estão a um clique de distancia!"/>
+<meta name="twitter:creator" content="Caio Peres"/>
+<meta name="twitter:image" content="https://www.nork.digital/wp-content/uploads/2017/10/Logo-site-branco-300x87.png"/>
+<!-- JSON-LD - structured data markup Google Search -->
+<script type="application/ld+json">
+{"@context":"http://www.schema.org","@type":"product","brand":"Nork Digital","name":"LinkWhats","description":"Gere links diretos utilizando a API do WhatsApp, os seus contatos estão a um clique de distancia!"}
+</script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js.js"></script>
+    
 </head>
 
 <body>
@@ -40,19 +74,19 @@
         </div>
 
 
-        <div class="hero-body is-medium">
+        <div class="is-mobile">
             <div class="container has-text-centered bg-form">
                 <h1 class="title">
                     LINKWHATS
                 </h1>
                 <h2 class="subtitle">
-                    Facilitador de links para WhatsApp!
+                    Gerador de link para WhatsApp
                 </h2>
-                <p>Lembre-se de encutar o link ,<br> ou ele não funcionara!</p>
+                <p class="pdb-1">Fácil e rápido, basta digitar o celular e a mensagem e compartilhar com seus contatos.</p>
                 <div class="column">
                     <form action="PayslipServlet" method="get">
 
-                        <div class=""><input class="input-c" size="45"  name="tel" id="tel" placeholder="Telefone/Celular" onkeypress='return SomenteNumero(event)'></div>
+                        <div class=""><input class="input-c" size="45"  name="tel" id="tel" placeholder="Celular com DDD" onkeypress='return SomenteNumero(event)'></div>
                 </div>
                 <div class="col">
                     <div class=""><input class="input-c" size="45" type="text" name="msg" id="msg" placeholder="Mensagem padrão" onkeypress='return ReplaceEspaco()'></div>
@@ -63,7 +97,11 @@
 
                 </form>
                 </br>
-                <span class="result" id="result"></span>
+                <span class="result" id="result"> </span>
+
+                <p class="">Para garantir o funcionamento lembre-se de encutar o link.</p>
+                
+    
             </div>
         </div>
         </div>
@@ -73,13 +111,27 @@
             <nav class="tabs">
                 <div class="container">
                     <ul>
-                        <li class="is-active"><!--<a>Criado por Caio Peres</a>--></li>
-                        <li><a href="https://www.nork.digital">Powered by Nork Digital</a></li>
+                        <li class="is-active"><a href="https://github.com/cjperes">Criado por Caio Peres</a></li>
+                        <li><a href="https://www.nork.digital">Mantido por Nork Digital</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </section>
 </body>
+<script>
+$("#msg").keyup(function () {
+    this.value = this.value.replace(/ /g, "%");
+});
+</script>
+
+<script>
+$(".result").on("click", function () {
+		   $(this).select();
+		   document.execCommand("copy");
+		   $('.ready-text').text('Link copiado!').css('color','#00a006');
+		});</script>
+
+
 
 </html>

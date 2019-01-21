@@ -1,5 +1,6 @@
 function go() {
-        document.getElementById("result").innerHTML = "https://api.whatsapp.com/send?phone=55" + document.getElementById('tel').value + "&text=" + document.getElementById('msg').value;
+        document.getElementById('result').innerHTML = "https://api.whatsapp.com/send?phone=55" + document.getElementById('tel').value + "&text=" + document.getElementById('msg').value;
+        
     }
 
 
@@ -12,4 +13,21 @@ function go() {
         }
     }
     
-  
+    $("#msg").keyup(function () {
+        this.value = this.value.replace(/ /g, "_");
+    });
+
+    
+function ReplaceEspaco(string, target, replacement) {
+ 
+        var i = 0, length = string.length;
+        
+        for (i; i < length; i++) {
+        
+          string = string.replace(target, replacement);
+        
+        }
+        
+        return string;
+        
+       }
