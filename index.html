@@ -82,22 +82,24 @@
                 <h2 class="subtitle">
                     Gerador de link para WhatsApp
                 </h2>
-                <p class="pdb-1">Fácil e rápido, basta digitar o celular e a mensagem e compartilhar com seus contatos.</p>
+                <p class="pdb-1">Fácil e rápido, basta digitar o celular, a mensagem e compartilhar com seus contatos.</p>
                 <div class="column">
                     <form action="PayslipServlet" method="get">
 
                         <div class=""><input class="input-c" size="45"  name="tel" id="tel" placeholder="Celular com DDD" onkeypress='return SomenteNumero(event)'></div>
                 </div>
                 <div class="col">
-                    <div class=""><input class="input-c" size="45" type="text" name="msg" id="msg" placeholder="Mensagem padrão" onkeypress='return ReplaceEspaco()'></div>
+                    <div class=""><input class="input-c" size="45" type="text" name="msg" id="msg" placeholder="Mensagem padrão"></div>
                 </div>
                 <div class="col">
-                    <input class="button is-primary is-inverted pdt-1" type="button" id="first-button" value="Gerar" onClick="go()">
+                    <input class="button is-primary is-inverted pdt-1" type="button" id="first-button" value="Gerar e copiar" onClick="go(); copyToClipboard('#result');">
                 </div>
 
                 </form>
                 </br>
+                <div class="resultado">
                 <span class="result" id="result"> </span>
+            </div>
 
                 <p class="">Para garantir o funcionamento lembre-se de encutar o link.</p>
                 
@@ -125,12 +127,6 @@ $("#msg").keyup(function () {
 });
 </script>
 
-<script>
-$(".result").on("click", function () {
-		   $(this).select();
-		   document.execCommand("copy");
-		   $('.ready-text').text('Link copiado!').css('color','#00a006');
-		});</script>
 
 
 

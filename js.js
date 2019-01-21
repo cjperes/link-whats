@@ -13,21 +13,13 @@ function go() {
         }
     }
     
-    $("#msg").keyup(function () {
-        this.value = this.value.replace(/ /g, "_");
-    });
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+        alert("Link copiado");
+      }
 
     
-function ReplaceEspaco(string, target, replacement) {
- 
-        var i = 0, length = string.length;
-        
-        for (i; i < length; i++) {
-        
-          string = string.replace(target, replacement);
-        
-        }
-        
-        return string;
-        
-       }
