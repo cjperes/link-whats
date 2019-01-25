@@ -45,6 +45,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js.js"></script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97209160-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-97209160-3');
+</script>
+
     
 </head>
 
@@ -78,13 +88,13 @@
 
         <div class="is-mobile">
             <div class="container has-text-centered bg-form">
-                <h1 class="title">
-                    LINKWHATS
+                <h1 class="title pdb-1">
+                    Gerador de link para WhatsApp
                 </h1>
                 <h2 class="subtitle">
-                    Gerador de link para WhatsApp
+                    Fácil e rápido, basta digitar o celular, a mensagem</br> e compartilhar com seus contatos.
                 </h2>
-                <p class="pdb-1">Fácil e rápido, basta digitar o celular, a mensagem e compartilhar com seus contatos.</p>
+                
                 <div class="column">
                     <form action="PayslipServlet" method="get">
 
@@ -103,7 +113,7 @@
                 <span class="result" id="result"> </span>
             </div>
 
-                <p class="">Para garantir o funcionamento lembre-se de encutar o link.</p>
+                <p class="">Para garantir o funcionamento tanto no celular</br> quanto no computador lembre-se de encutar o link.</p>
                 
     
             </div>
@@ -115,8 +125,8 @@
             <nav class="tabs">
                 <div class="container">
                     <ul>
-                        <li class="is-active"><a href="https://github.com/cjperes">Criado por Caio Peres</a></li>
-                        <li><a href="https://www.nork.digital">Mantido por Nork Digital</a></li>
+                        <li class="is-active"><a href="https://linkedin.com/in/caio-peres-7b99a964">Criado por Caio Peres</a></li>
+                        <li><a href="https://www.nork.digital">LinkWhats by Nork Digital</a></li>
                     </ul>
                 </div>
             </nav>
@@ -136,7 +146,7 @@
                 $temp.val($(element).text()).select();
                 document.execCommand("copy");
                 $temp.remove();
-                alert("Link copiado!");
+                alert("Link copiado para a área de transferência! (Ctrl+V)");
               }
         </script>
 </body>
