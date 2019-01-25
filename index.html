@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Language" content="pt-br">
-    <title>LinkWhats - Gerador de link para WhatsApp!</title>
+    <title>Gerador de links para WhatsApp! - LinkWhats</title>
 <meta name="description" content="Gerar links para o WhatsApp, utilizando a API. Os seus contatos estão a um clique de distancia!"/>
+<link rel="shortcut icon" type="image/png" href="https://nork.digital/wp-content/uploads/2017/10/cropped-novo-logo-04.png"/>
 <meta name="author" content="Caio Peres"/>
 <meta name="robots" content="index/follow"/>
 <meta name="googlebot" content="index/follow"/>
@@ -21,7 +22,7 @@
 <meta property="og:type" content=""/>
 <meta property="og:title" content="LinkWhats - Gerador de link para WhatsApp!"/>
 <meta property="og:url" content="http://nork.digital/labs/linkwhats/"/>
-<meta property="og:site_name" content=""/>
+<meta property="og:site_name" content="LinkWhats"/>
 <meta property="og:image" content="https://www.nork.digital/wp-content/uploads/2017/10/Logo-site-branco-300x87.png"/>
 <meta property="og:description" content="Gerar links para o WhatsApp, utilizando a API. Os seus contatos estão a um clique de distancia!"/>
 <meta property="og:locale" content=""/>
@@ -86,10 +87,10 @@
                 <div class="column">
                     <form action="PayslipServlet" method="get">
 
-                        <div class=""><input class="input-c" size="45"  name="tel" id="tel" placeholder="Celular com DDD" onkeypress='return SomenteNumero(event)'></div>
+                        <div class=""><input class="input-c"   name="tel" id="tel" placeholder="Celular com DDD" onkeypress='return SomenteNumero(event)'></div>
                 </div>
                 <div class="col">
-                    <div class=""><input class="input-c" size="45" type="text" name="msg" id="msg" placeholder="Mensagem padrão"></div>
+                    <div class=""><input class="input-c"  type="text" name="msg" id="msg" placeholder="Mensagem padrão"></div>
                 </div>
                 <div class="col">
                     <input class="button is-primary is-inverted pdt-1" type="button" id="first-button" value="Gerar e copiar" onClick="go(); copyToClipboard('#result');">
@@ -120,23 +121,24 @@
             </nav>
         </div>
     </section>
+    <script>
+        $("#msg").keyup(function () {
+            this.value = this.value.replace(/ /g, "%20");
+        });
+        </script>
+        
+        <script>
+            function copyToClipboard(element) {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val($(element).text()).select();
+                document.execCommand("copy");
+                $temp.remove();
+                alert("Link copiado!");
+              }
+        </script>
 </body>
-<script>
-$("#msg").keyup(function () {
-    this.value = this.value.replace(/ /g, "%20");
-});
-</script>
 
-<script>
-    function copyToClipboard(element) {
-        var $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($(element).text()).select();
-        document.execCommand("copy");
-        $temp.remove();
-        alert("Link copiado!");
-      }
-</script>
 
 
 
